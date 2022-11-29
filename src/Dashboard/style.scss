@@ -1,0 +1,92 @@
+.dashboard {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px;
+
+  path.helmet {
+    color: inherit;
+    fill: currentColor;
+  }
+}
+
+.user {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.user__index {
+  font-weight: bold;
+  min-width: 1.2em;
+  transition: 0.1s ease;
+
+  .user--active & {
+    color: plum;
+  }
+}
+
+.user__icon {
+  flex: 0 0 auto;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 100%;
+    border: 2px solid plum;
+    transition: 0.1s ease;
+    opacity: 0;
+  }
+
+  .user--active &:before {
+    opacity: 1;
+  }
+}
+
+.user__caption {
+}
+
+.user__name {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user__info {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  color: dodgerblue;
+}
+
+.user__time {
+  color: plum;
+}
